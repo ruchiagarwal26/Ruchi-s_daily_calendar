@@ -1,5 +1,32 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
+## My Planner URL: https://ruchiagarwal26.github.io/Ruchi-s_daily_calendar/Develop/
+
+![image](https://user-images.githubusercontent.com/115508901/215365715-d74ea8c5-f8c2-4e5c-a42c-f5d801936c51.png)
+
+
+Welcome to my planner. This planner is created for busy professionals who want to maintain their schedule daily. 
+
+The features of this planner are:
+
+```
+a) It is a daily planner, with today's date displayed on the top of the page
+
+b) The planner contains block for each working hour. Starting from 9:00 am to 5:00 PM 
+
+c) for ease of use, each hour is colour coded based on it the hour is passed (grey), it's present (red) or yet to come (green)
+
+d) The user can write the schedule in given text area for each hour
+
+e) This text record will be saved in the local storage once clicked on the save button
+
+f) however, if the hour is passed, it cannot be saved on the local storage. Save button will be disabled
+
+g) This set rcord will perish in the local storage
+
+```
+
+
 ## Your Task
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
