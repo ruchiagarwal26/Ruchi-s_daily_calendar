@@ -95,7 +95,7 @@ for (i in hourList){
     // i will be the index number in the list
     var hourFor = hourList[i];
     console.log("hourFor ", hourFor);
-    // find respective id and then 
+    // find respective id and then find the create the variable for getitem
     var hourTextArea =  $("#"+ hourFor).find( ".description").eq(0)
     console.log("hourTextArea ", hourTextArea);
     //hourTextArea.val("test")
