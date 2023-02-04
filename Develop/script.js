@@ -7,6 +7,7 @@ $(function () {
 //dayjs for finding current hour
 var currentHour = dayjs().hour();
 
+//for logs and testing
 console.log ("currentHour " , currentHour);
 
 //Variable to save all time slots that will be displayed on webpage
@@ -32,6 +33,8 @@ $('.time-block').each(function (){
     
  // pushing all the hours to an array
     hourList.push(hourDisplay);
+
+ // for logs and testing   
     console.log("hourDisplay", hourDisplay);
     console.log("hourList ", hourList);
 
@@ -39,23 +42,29 @@ $('.time-block').each(function (){
 //WHEN I view the timeblocks for that day
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
+//validating the currenthour with all displayed working hours
 if (hourDisplay < currentHour){
+    // if displayed hours are less than current hour select color code from css where class is past
                 $(this).addClass('past');
                 $(this).removeClass("future");
                 $(this).removeClass("present");
-                //cannot save text if current hour is passed
+    //cannot save text if current hour is passed
                 $(this).children().last().prop("disabled",true);
             }
             else if (hourDisplay === currentHour) {
+    // if displayed hours is equal to current hour select color code from css where class is present            
                 $(this).removeClass("past");
                 $(this).addClass("present");
                 $(this).removeClass("future");
+    //can save text if current hour is passed            
                 $(this).children().last().prop("disabled",false);
             }
             else {
+    // if displayed hours is greater than current hour select color code from css where class is future            
                 $(this).removeClass("present");
                 $(this).removeClass("past");
                 $(this).addClass("future");
+    //cannot save text if current hour is passed            
                 $(this).children().last().prop("disabled",false);
             }
 });
@@ -83,15 +92,15 @@ $('.saveBtn').click(function(){
 //THEN the saved events persist
 
 for (i in hourList){
+    // i will be the index number in the list
     var hourFor = hourList[i];
-    $("#hourFor .description").val(localStorage.getItem("hourFor"))
+    console.log("hourFor ", hourFor);
+    // find respective id and then 
+    var hourTextArea =  $("#"+ hourFor).find( ".description").eq(0)
+    console.log("hourTextArea ", hourTextArea);
+    //hourTextArea.val("test")
+    hourTextArea.val(localStorage.getItem(hourFor))
 
-    // validate if getItem is working as desired
-    if( $("#hourFor .description").val(localStorage.getItem("hourFor")) === null){
-            console.log("not working");
-         } else {
-            console.log("its working " , hourFor);
-         }
 }
 
 });
